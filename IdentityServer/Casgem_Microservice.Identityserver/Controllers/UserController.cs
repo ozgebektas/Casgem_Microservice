@@ -1,12 +1,15 @@
 ﻿using Casgem_Microservice.Identityserver.Dtos;
 using Casgem_Microservice.Identityserver.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace Casgem_Microservice.Identityserver.Controllers
 {
+    [Authorize(LocalApi.PolicyName)]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
